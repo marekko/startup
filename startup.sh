@@ -7,6 +7,8 @@
 sudo apt-get install -y git
 sudo apt-get install -y curl
 sudo apt-get install -y rlwrap 
+sudo apt-get install -y screen 
+
 
 # Install emacs24
 # https://launchpad.net/~cassou/+archive/emacs
