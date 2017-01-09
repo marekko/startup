@@ -1,20 +1,49 @@
 #!/bin/bash
-# Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
-# for headless setup. 
+# Simple setup.sh for configuring Ubuntu 16.04 LTS EC2 instance
+# for headless setup.
 
-# Install nvm: node-version manager
-# https://github.com/creationix/nvm
 sudo apt-get install -y git
 sudo apt-get install -y curl
-sudo apt-get install -y rlwrap 
-sudo apt-get install -y screen 
+sudo apt-get install -y rlwrap
+sudo apt-get install -y screen
+sudo apt-get install -y mc
+
+# install docker
+# based on https://docs.docker.com/engine/installation/linux/ubuntulinux/
+
+sudo apt-get install -y apt-transport-https ca-certificates
+
+sudo apt-key adv \
+               --keyserver hkp://ha.pool.sks-keyservers.net:80 \
+               --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+
+# ubuntuu xenial 16.04
+
+echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | \
+                sudo tee /etc/apt/sources.list.d/docker.list
+
+
+sudo apt-get update
+
+# check if it is ready: apt-cache policy docker-engine
+
+# install dependencies
+sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
+
+# install docker
+sudo apt-get install -y docker-engine
+
+# start service 
+sudo service docker start
 
 
 # Install emacs24
-# https://launchpad.net/~cassou/+archive/emacs
-sudo add-apt-repository -y ppa:cassou/emacs
+# https://www.bahudha.com/linux/install-gnu-emacs-24-ubuntu
+# sudo add-apt-repository -y ppa:cassou/emacs
+sudo add-apt-repository ppa:ubuntu-elisp/ppa
 sudo apt-get -qq update
 sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
+
 
 # git pull and install dotfiles as well
 cd $HOME
@@ -26,8 +55,8 @@ if [ -d .emacs.d/ ]; then
 fi
 
 git clone https://github.com/marekko/dotfiles.git
-ln -sb dotfiles/.screenrc .
-ln -sb dotfiles/.bash_profile .
-ln -sb dotfiles/.bashrc .
-ln -sb dotfiles/.bashrc_custom .
-ln -sf dotfiles/.emacs.d .
+#ln -sb dotfiles/.screenrc .
+#ln -sb dotfiles/.bash_profile .
+#ln -sb dotfiles/.bashrc .
+#ln -sb dotfiles/.bashrc_custom .
+#ln -sf dotfiles/.emacs.d .
