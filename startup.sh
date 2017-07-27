@@ -54,6 +54,17 @@ if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
 fi
 
+#powerline
+sudo apt-get install -y python-pip
+sudo pip install --upgrade pip
+sudo pip install git+git://github.com/Lokaltog/powerline
+#install fonts
+wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+sudo mv PowerlineSymbols.otf /usr/share/fonts/
+sudo fc-cache -vf
+sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+
+
 git clone https://github.com/marekko/dotfiles.git
 ln -sb dotfiles/.screenrc .
 ln -sb dotfiles/.bash_profile .
