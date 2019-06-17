@@ -13,16 +13,16 @@ sudo apt-get install -y mc
 # install docker
 # based on https://docs.docker.com/engine/installation/linux/ubuntulinux/
 
-sudo apt-get install -y apt-transport-https ca-certificates
+#sudo apt-get install -y apt-transport-https ca-certificates
 
-sudo apt-key adv \
-               --keyserver hkp://ha.pool.sks-keyservers.net:80 \
-               --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+#sudo apt-key adv \
+#               --keyserver hkp://ha.pool.sks-keyservers.net:80 \
+#               --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 
 # ubuntuu xenial 16.04
 
-echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | \
-                sudo tee /etc/apt/sources.list.d/docker.list
+#echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | \
+#                sudo tee /etc/apt/sources.list.d/docker.list
 
 
 sudo apt-get update
