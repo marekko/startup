@@ -2,6 +2,8 @@
 # Simple setup.sh for configuring Ubuntu 16.04 LTS EC2 instance
 # for headless setup.
 
+#update
+
 sudo apt-get install -y git
 sudo apt-get install -y curl
 sudo apt-get install -y rlwrap
