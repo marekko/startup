@@ -1,14 +1,29 @@
 #!/bin/bash
+
 # Simple setup.sh for configuring Ubuntu 16.04 LTS EC2 instance
 # for headless setup.
 
 #update
+
+sudo apt-get update
 
 sudo apt-get install -y git
 sudo apt-get install -y curl
 sudo apt-get install -y rlwrap
 sudo apt-get install -y screen
 sudo apt-get install -y mc
+sudo apt-get install -y vim
+sudo apt-get install -y fonts-powerline
+#sudo apt-get install -y mc
+#sudo apt-get install -y mc
+
+
+# install zshell
+sudo apt install -y zsh
+#chsh -s $(which zsh)
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
 
 # install docker
 # based on https://docs.docker.com/engine/installation/linux/ubuntulinux/
@@ -25,26 +40,25 @@ sudo apt-get install -y mc
 #                sudo tee /etc/apt/sources.list.d/docker.list
 
 
-sudo apt-get update
 
 # check if it is ready: apt-cache policy docker-engine
 
 # install dependencies
-sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
+#sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
 
 # install docker
-sudo apt-get install -y docker-engine
+#sudo apt-get install -y docker-engine
 
 # start service 
-sudo service docker start
+#sudo service docker start
 
 
 # Install emacs24
 # https://www.bahudha.com/linux/install-gnu-emacs-24-ubuntu
 # sudo add-apt-repository -y ppa:cassou/emacs
-sudo add-apt-repository ppa:ubuntu-elisp/ppa
-sudo apt-get -qq update
-sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
+#sudo add-apt-repository ppa:ubuntu-elisp/ppa
+#sudo apt-get -qq update
+#sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
 
 # git pull and install dotfiles as well
@@ -57,19 +71,21 @@ if [ -d .emacs.d/ ]; then
 fi
 
 #powerline
-sudo apt-get install -y python-pip
-sudo pip install --upgrade pip
-sudo pip install git+git://github.com/Lokaltog/powerline
+#sudo apt-get install -y python-pip
+#sudo pip install --upgrade pip
+#sudo pip install git+git://github.com/Lokaltog/powerline
 #install fonts
-wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
-sudo mv PowerlineSymbols.otf /usr/share/fonts/
-sudo fc-cache -vf
-sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+#wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+#sudo mv PowerlineSymbols.otf /usr/share/fonts/
+#sudo fc-cache -vf
+#sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 
 
 git clone https://github.com/marekko/dotfiles.git
-ln -sb dotfiles/.screenrc .
-ln -sb dotfiles/.bash_profile .
-ln -sb dotfiles/.bashrc .
-ln -sb dotfiles/.bashrc_custom .
-ln -sf dotfiles/.emacs.d .
+#ln -sb dotfiles/.screenrc .
+#ln -sb dotfiles/.bash_profile .
+#ln -sb dotfiles/.bashrc .
+#ln -sb dotfiles/.bashrc_custom .
+#ln -sf dotfiles/.emacs.d .
+
+
