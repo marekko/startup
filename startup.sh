@@ -22,7 +22,8 @@ sudo apt-get install -y fonts-powerline
 sudo apt install -y zsh
 #chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+#install zsh-autosugestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 
 # install docker
@@ -87,5 +88,6 @@ git clone https://github.com/marekko/dotfiles.git
 #ln -sb dotfiles/.bashrc .
 #ln -sb dotfiles/.bashrc_custom .
 #ln -sf dotfiles/.emacs.d .
+ln -sb dotfiles/.zshrc .
 
 
