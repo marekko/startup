@@ -82,6 +82,8 @@ fi
 #sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 
 
+
+
 git clone https://github.com/marekko/dotfiles.git
 #ln -sb dotfiles/.screenrc .
 #ln -sb dotfiles/.bash_profile .
