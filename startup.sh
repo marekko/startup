@@ -14,8 +14,7 @@ sudo apt-get install -y screen
 sudo apt-get install -y mc
 sudo apt-get install -y vim
 sudo apt-get install -y fonts-powerline
-#sudo apt-get install -y mc
-#sudo apt-get install -y mc
+sudo apt install direnv
 
 
 # install zshell
