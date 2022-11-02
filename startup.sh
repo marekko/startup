@@ -91,4 +91,20 @@ git clone https://github.com/marekko/dotfiles.git
 #ln -sf dotfiles/.emacs.d .
 ln -sb dotfiles/.zshrc .
 
+# teraform : https://computingforgeeks.com/how-to-install-terraform-on-ubuntu/
+sudo apt install  -y software-properties-common gnupg2 curl
+
+curl https://apt.releases.hashicorp.com/gpg | gpg --dearmor > hashicorp.gpg
+sudo install -o root -g root -m 644 hashicorp.gpg /etc/apt/trusted.gpg.d/
+
+sudo apt-add-repository -y "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com focal main"
+
+sudo apt update
+sudo apt install -y terraform
+
+# install aws-cli
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
 
