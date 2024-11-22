@@ -12,7 +12,7 @@ sudo apt-get install -y curl
 sudo apt-get install -y rlwrap
 sudo apt-get install -y screen
 sudo apt-get install -y mc
-sudo apt-get install -y vim
+sudo apt-get install -y neovim
 sudo apt-get install -y fonts-powerline
 sudo apt install direnv
 
@@ -108,12 +108,8 @@ unzip awscliv2.zip
 sudo ./aws/install
 
 #kubectl
-sudo apt-get install -y ca-certificates curl
-sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-
-sudo apt-get update
-sudo apt-get install -y kubectl
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 
