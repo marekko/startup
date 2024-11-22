@@ -66,9 +66,9 @@ cd $HOME
 if [ -d ./dotfiles/ ]; then
     mv dotfiles dotfiles.old
 fi
-if [ -d .emacs.d/ ]; then
-    mv .emacs.d .emacs.d~
-fi
+#if [ -d .emacs.d/ ]; then
+#    mv .emacs.d .emacs.d~
+#fi
 
 #powerline
 #sudo apt-get install -y python-pip
