@@ -7,14 +7,15 @@
 
 sudo apt-get update
 
-sudo apt-get install -y git
-sudo apt-get install -y curl
-sudo apt-get install -y rlwrap
-sudo apt-get install -y screen
-sudo apt-get install -y mc
-sudo apt-get install -y neovim
-sudo apt-get install -y fonts-powerline
-sudo apt install direnv
+sudo apt install -y git
+sudo apt install -y curl
+sudo apt install -y rlwrap
+sudo apt install -y screen
+sudo apt install -y mc
+sudo apt install -y neovim
+sudo apt install -y fonts-powerline
+sudo apt install -y direnv
+sudo apt install -y tmux
 
 
 # install zshell
