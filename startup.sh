@@ -13,7 +13,7 @@ sudo apt install -y rlwrap
 sudo apt install -y screen
 sudo apt install -y mc
 sudo apt install -y neovim
-sudo apt install -y fonts-powerline
+#sudo apt install -y fonts-powerline
 sudo apt install -y direnv
 sudo apt install -y tmux
 
@@ -93,24 +93,24 @@ git clone https://github.com/marekko/dotfiles.git
 ln -sb dotfiles/.zshrc .
 
 # teraform : https://computingforgeeks.com/how-to-install-terraform-on-ubuntu/
-sudo apt install  -y software-properties-common gnupg2 curl
+#sudo apt install  -y software-properties-common gnupg2 curl
 
-curl https://apt.releases.hashicorp.com/gpg | gpg --dearmor > hashicorp.gpg
-sudo install -o root -g root -m 644 hashicorp.gpg /etc/apt/trusted.gpg.d/
+#curl https://apt.releases.hashicorp.com/gpg | gpg --dearmor > hashicorp.gpg
+#sudo install -o root -g root -m 644 hashicorp.gpg /etc/apt/trusted.gpg.d/
 
-sudo apt-add-repository -y "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com focal main"
+#sudo apt-add-repository -y "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com focal main"
 
-sudo apt update
-sudo apt install -y terraform
+#sudo apt update
+#sudo apt install -y terraform
 
 # install aws-cli
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
+#curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+#unzip awscliv2.zip
+#sudo ./aws/install
 
 #kubectl
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+#curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
-sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+#sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 
